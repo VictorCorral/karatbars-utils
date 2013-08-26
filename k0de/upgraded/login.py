@@ -119,6 +119,9 @@ class Entry(object):
             sleep_time = self.sleep_time(10)
             print "\tSleeping for", sleep_time, "seconds"
             time.sleep(sleep_time)
+            users = self.browser.find_by_css('.binary_text')
+            for user in users:
+                print user.text
 
 
     def sleep_time(self, s):
