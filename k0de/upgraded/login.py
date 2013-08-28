@@ -49,21 +49,6 @@ class Entry(object):
         self.browser=browser
         self.url=url
 
-    @try_method
-    def find_bid_button(self):
-        self.bid_button = self.browser.find_by_xpath('//a[@class="bid-button-link button-small"]')
-
-    def item_price(self):
-        price = self.browser.find_by_xpath('//*[@class="bid-price"]')
-        return float(price.value[1::])
-
-
-    @try_method
-    def click_bid_button(self):
-        self.bid_button.click()
-        print "\tClicked."
-        time.sleep(1)
-
     def login(self):
         print "Logging in..."
         self.browser.visit(url_for_action('login'))
@@ -86,7 +71,6 @@ class Entry(object):
             sleep_time = 5
             print "\tSleeping for", sleep_time, "seconds"
             time.sleep(sleep_time)
-
 
 
 def main(bid_url=None):

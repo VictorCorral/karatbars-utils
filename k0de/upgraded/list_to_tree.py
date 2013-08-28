@@ -30,8 +30,8 @@ class ListToTree(object):
                 pass
             self.append_children(e)
 
-    def show(self):
-        self.tree.show()
+    def show(self, **kwargs):
+        self.tree.show(**kwargs)
 
     def append_children(self, e):
         try:
