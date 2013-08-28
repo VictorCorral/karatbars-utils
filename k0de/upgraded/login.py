@@ -12,9 +12,11 @@ import traceback
 
 # pypi
 from splinter import Browser
+from treelib import Tree
 
 # local
 import user as userdata
+import list_to_tree
 
 
 pp = pprint.PrettyPrinter(indent=4)
@@ -70,97 +72,21 @@ class Entry(object):
         button = self.browser.find_by_id('btn_login')
         button.click()
 
-
-    @try_method
-    def execute_click(self):
-        self.find_bid_button()
-        self.click_bid_button()
-        self.report_results()
-
-    def report_results(self):
-        self.bids_at_finish = self.bids_left()
-        diff = self.bids_at_start - self.bids_at_finish
-        bid_cost = diff * 0.50
-        total_cost = bid_cost + self.item_price()
-        print "\tBids used: {0}. Bid Cost at .50/bid = {1}. Total cost = {2}".format(diff, bid_cost, total_cost)
-
-    def check_for_click(self):
-        #self.countdown() <= 2 would be a neat test, but the DOM is
-        # too freaky around this time to be playing games and you
-        # have to get a click in at all costs.
-
-        # it would be nice to not waste a click if someone else clicks
-        # in the same few milliseconds but that is not possible
-        # given the speed of DOM lookups, etc
-        return True
-
-    def chosen_auction(self):
-        u = self.browser.url
-        if re.search('\d+$', u):
-            print "Chosen auction", u
-            return u
-        else:
-            time.sleep(5)
-            print "\tStill waiting for auction to be chosen"
-            return self.chosen_auction()
-
-    def wait_for_auction_choice(self):
-        self.browser.visit(url_for_action('auctions'))
-        return self.chosen_auction()
-
-
-
     def visit_binary(self):
-
-        print "Visiting", self.url
         self.browser.visit(url_for_action('binary'))
 
+        tree = Tree()
+
         while True:
-            sleep_time = self.sleep_time(10)
+            users = self.browser.find_by_css('.binary_text')
+            users = [u.text for u in users]
+            l = list_to_tree.ListToTree(users)
+            l.show()
+
+            sleep_time = 5
             print "\tSleeping for", sleep_time, "seconds"
             time.sleep(sleep_time)
-            users = self.browser.find_by_css('.binary_text')
-            for user in users:
-                print user.text
 
-
-    def sleep_time(self, s):
-        if s <= 1:
-            return 0
-        elif s == 2:
-            return 0
-        elif s == 3 or s == 4:
-            return 0.1
-        else:
-            return s - 4
-
-    def bids_left(self):
-        div = self.browser.find_by_xpath('//*[@class="bid-balance"]')
-        #pdb.set_trace()
-        return int(div.value)
-
-
-    def countdown_div_value(self):
-        countdown_div = self.browser.find_by_xpath(
-            '//div[@class="timer countdown"]'
-        )
-        v = countdown_div.value.split(':')
-        if "--" in v: # timer has not printed to screen
-            return self.countdown_div_value()
-        elif "Ended" in v:
-            print "Auction ended."
-            return None
-        else:
-            return v
-
-    @try_method
-    def countdown(self):
-        c = self.countdown_div_value()
-        if c is None:
-            return None
-
-        (h,m,s) = [int(v) for v in c]
-        return h*60*60 + m*60 + s
 
 
 def main(bid_url=None):
