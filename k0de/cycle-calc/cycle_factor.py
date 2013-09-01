@@ -12,11 +12,11 @@ def cycle_factor(left,right):
     cycles = 0
     while True:
         plrc(left, right, cycles)
-        if ((right >= left) and left > 25 and right > 50):
+        if ((right >= left) and left >= 25 and right >= 50):
             cycles += 1
             left -= 25
             right -= 50
-        elif ((left >= right) and left > 50 and right > 25):
+        elif ((left >= right) and left >= 50 and right >= 25):
             cycles += 1
             right -= 25
             left -= 50
