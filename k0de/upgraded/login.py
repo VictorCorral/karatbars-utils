@@ -42,10 +42,9 @@ def try_method(fn):
 
 class Entry(object):
 
-    def __init__(self, user, browser, url):
+    def __init__(self, user, browser):
         self.user=user
         self.browser=browser
-        self.url=url
 
     @try_method
     def find_bid_button(self):
@@ -112,7 +111,6 @@ class Entry(object):
 
     def visit_binary(self):
 
-        print "Visiting", self.url
         self.browser.visit(url_for_action('binary'))
 
         while True:
@@ -163,11 +161,11 @@ class Entry(object):
         return h*60*60 + m*60 + s
 
 
-def main(bid_url=None):
+def main():
     with Browser() as browser:
 
         for user in userdata.users:
-            e = Entry(user, browser, bid_url)
+            e = Entry(user, browser)
             e.login()
             e.visit_binary()
             while True: pass

@@ -1,0 +1,138 @@
+digraph G {
+
+
+  subgraph cluster0 {
+    node [style=filled,color=white];
+    style=filled;
+    color=lightgrey;
+    macsaviour -> vasscarda;
+    vasscarda -> deebubbles;
+    deebubbles -> computerguy;
+    deebubbles -> alvinm;
+    alvinm -> anthonylau;
+    anthonylau -> nailahm;
+    label = "Caribbean";
+  }
+
+  subgraph cluster1 {
+    node [style=filled];
+    andreah -> susanck;
+    label = "Nevada";
+    color=blue;
+      }
+
+  subgraph cluster2 {
+    node [style=filled];
+    becomewealthy -> montresor;
+    becomewealthy -> wealthsavings;
+    label = "Boynton Beach, FL";
+    color=blue;
+      }
+
+  subgraph cluster3 {
+    node [style=filled];
+    sbsmarketing -> masashana [label="Gloria Lesetedi"];
+
+    masashana -> fab [label="Thabo Seokemong"];
+    masashana -> potsane [label="Masego Mmalane"];
+
+    potsane -> potant [label="Kopano Mmalane"];
+    potsane -> ebat [label="Lame Bridget Motlhabi"];
+    potsane -> mrnono [label="Keletso Mothatego Mmalane"];
+
+    potant -> pontonas;
+    pontonas -> tasema;
+
+    ebat -> odux [label="Odumetse Komani"];
+    ebat -> smartnana;
+
+    odux -> thaks;
+    odux -> popona;
+
+    popona -> martinus;
+    popona -> loago;
+
+    thaks -> mrnono;
+    thaks -> devinelyquided;
+
+    label = "Botswana, Africa";
+    style=filled;
+    color=green;
+      }
+
+
+
+
+  supreme -> macsaviour;
+
+  vasscarda -> rigginj [ label="Maryland" ];
+  rigginj -> finalifre [ label="Oregon" ];
+  finalifre -> sbsmarketing [ label="Botswana, Africa" ];
+  sbsmarketing -> bitcoin [ label="Long Beach, CA" ];
+
+
+  bitcoin -> andreah;
+
+  susanck -> moneyworld [ label="Germany" ];
+  moneyworld -> elhoward [ label="Chicago" ];
+  elhoward -> eugold [ label="Sweden" ];
+  bitcoin -> chessman34 [ label="Western PA" ];
+  chessman34 -> cocos49;
+
+  supreme -> tamamintersol [ label="Lafayette, IN" ];
+  tamamintersol -> justdoit [ label="Staten Island, NY" ];
+  justdoit -> bible [ label="Las Vegas, NV" ];
+  bible -> rpitts22 [ label="NC" ] ;
+  bible -> sheerpower [ label="South Africa" ];
+  sheerpower -> rasipromo [ label="Detroit" ];
+  rasipromo -> verticalvision;
+  verticalvision -> savenow [ label="Peterborough, Ontario CANADA" ];
+  savenow -> maymay;
+  verticalvision -> hammet52 [ label="TX" ];
+
+  hammet52 -> wrice [ label="WI" ];
+
+  wrice -> kbarprofits;
+  kbarprofits -> letsbefree [ label="Steve Antal, Northern Cali" ];
+  letsbefree -> rikmccoy [ label="PA and NV" ];
+  letsbefree -> edsuriano [ label="Upstate NY" ];
+  rikmccoy -> barb24k [ label="Barbara Turner, Maryland" ];
+  rikmccoy -> barbmwilliams [ label="Barbara , Washington State" ];
+  barbmwilliams -> "24karatgoldcash" [ label="William Gravestock, North Cali" ];
+  barb24k -> randy24k [ label="Randy Anderson, Minnesota" ];
+  randy24k -> bodytuner [ label="Denise Higgison, Utah" ];
+  bodytuner -> goldmoney999 [ label="Dan Pinkevich, Minnesota" ];
+  goldmoney999 -> mygoldtoday [ label="Diana Barisyuk, NYC?" ];
+  goldmoney999 -> orodinero999 [ label="Raisa Shauchuk, Belarus" ];
+  mygoldtoday -> deb123 [ label="Debbie Sullivan, Columbia, IL" ];
+  deb123 -> wealthmagnet [ label="Ken Ferguson, MD" ];
+  deb123 -> caryl1319 [ label="Caryl Stohr, NH" ];
+  edsuriano -> mlpercifield [ label="Indiana" ];
+  edsuriano -> lifegetsbetter [ label="Gordon Fulton, Arizona" ];
+  lifegetsbetter -> delwyn7 [ label="Northwest TX" ];
+  delwyn7 -> myfortknox [ label="PA" ];
+  bblessed -> ricnbev [ label="Enrique, Hawaii" ];
+  ricnbev -> turul1943 [ label="Vukovics Istvan, Australia" ];
+  turul1943 -> becomewealthy [ label="Henoc Ulysee, Palm Beach, FL" ];
+  turul1943 -> stuttgart [label="Karin, German in Australia" ];
+  montresor -> richrewards [ label="Queens, NY" ];
+  wrice -> bblessed;
+
+}
+
+# sbsmarketing
+# potsane
+# stuttgart
+
+# maymay
+# Muna Sheikh
+# +1 780-231--1521
+# Canada
+# wwcl_@live.com
+# maymay
+# rikmccoy  -> barb24k =
+# = 412-944-6400
+
+# lars barmann +46 760-296-563
+# UNITS
+# chessman34 5,0
